@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    width: 100%;
+    margin: 0;
+    background-color: rgb(107, 170, 224);
+}
+.wrapper {
+    position: static;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgb(25, 5, 121);
+    /*overflow: hidden;*/
+}
+.title {
+    margin-top: 5%;
+    font-size: 3rem;  /*48рх*/
+    color: rgb(242, 158, 171);
+}
+.slider-wrapper {
+    overflow: hidden;
+}
+.slider-track {
+
+}
+.img {
+
+}
+.text {
+    
+}
