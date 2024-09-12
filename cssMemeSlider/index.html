@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MEME SLIDER</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styletest.css">
 </head>
 <body>
     <div class="wrapper">
@@ -13,61 +13,71 @@
             <input type="radio" id="slide1" name="slides" class="real-radio" checked>
             <input type="radio" id="slide2" name="slides" class="real-radio">
             <input type="radio" id="slide3" name="slides" class="real-radio">
-
             <div class="slider-track">
-                <div class="slide slide1 active">
+                <div class="slide slide1">
                     <img class="img" src="assets/slide1.jpg" alt="slide1"></img>
-                    <span class="text">Dream project</span>
+                    <div class="slide-bottom">
+                        <p class="text">Dream project</p>
+                        <div class="controls">
+                            <label for="slide1" class="areal-button">
+                                <span class="round"></span>
+                            </label>
+                            <label for="slide2" class="areal-button">
+                                <span class="round"></span>
+                            </label>
+                            <label for="slide3" class="areal-button">
+                                <span class="round"></span>
+                            </label>
+                        </div>
+                    </div>
                 </div>
                 <div class="slide slide2">
                     <img class="img" src="assets/slide2.jpg" alt="slide2"></img>
-                    <span class="text">I'm an artist, that's how I see it</span>
+                    <div class="slide-bottom">
+                        <p class="text">I'm an artist, that's how I see it</p>
+                        <div class="controls">
+                            <label for="slide1" class="areal-button">
+                                <span class="round"></span>
+                            </label>
+                            <label for="slide2" class="areal-button">
+                                <span class="round"></span>
+                            </label>
+                            <label for="slide3" class="areal-button">
+                                <span class="round"></span>
+                            </label>
+                        </div>
+                    </div>
                 </div>
                 <div class="slide slide3">
                     <img class="img" src="assets/slide3.jpg" alt="slide3"></img>
-                    <span class="text">Dreams come true</span>
+                    <div class="slide-bottom">
+                        <p class="text">Dreams come true</p>
+                        <div class="controls">
+                            <label for="slide1" class="areal-button">
+                                <span class="round"></span>
+                            </label>
+                            <label for="slide2" class="areal-button">
+                                <span class="round"></span>
+                            </label>
+                            <label for="slide3" class="areal-button">
+                                <span class="round"></span>
+                            </label>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="controls">
-                    <label for="slide1" class="areal-button">Slide 1</label>
-                    <label for="slide2" class="areal-button">Slide 2</label>
-                    <label for="slide3" class="areal-button">Slide 3</label>
-                <div class="areal-button">
-                    
-                    <!--<label class="label-button">
-                        <input type="radio" id="slide1" name="slides" class="real-radio" value="slide1" checked>
-                    </label>-->
-                </div>
-                <!--<div class="areal-button">
-                    <label class="label-button">
-                        <input type="radio" id="slide2" name="slides" class="real-radio" value="slide2">
-                    </label>
-                </div>
-                <div class="areal-button">
-                    <label class="label-button">
-                        <input type="radio" id="slide3" name="slides" class="real-radio" value="slide3">
-                    </label>
-                </div>-->
-            </div>
+            <!--<div class="controls">
+                <label for="slide1" class="areal-button">
+                    <span class="round"></span>
+                </label>
+                <label for="slide2" class="areal-button">
+                    <span class="round"></span>
+                </label>
+                <label for="slide3" class="areal-button">
+                    <span class="round"></span>
+                </label>
+            </div>-->
         </div>
-        <!--<div class="controls">
-            <div class="areal-button">
-                <label class="label-button">
-                    <input type="radio" id="button1" name="button" class="real-radio" value="slide1" checked>
-                </label>
-            </div>
-            <div class="areal-button">
-                <label class="label-button">
-                    <input type="radio" id="button2" name="button" class="real-radio" value="slide2">
-                </label>
-            </div>
-            <div class="areal-button">
-                <label class="label-button">
-                    <input type="radio" id="button3" name="button" class="real-radio" value="slide3">
-                </label>
-            </div>
-        </div>-->
-        
     </div>
 </body>
 </html>
