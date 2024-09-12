@@ -57,7 +57,8 @@ body {
     opacity: 1; /*первая картинка*/
 }
 #slide2:checked ~ .slider-track .slide2 .img,
-#slide3:checked ~ .slider-track .slide3 .img {
+#slide3:checked ~ .slider-track .slide3 .img,
+#slide4:checked ~ .slider-track .slide4 .img {
     opacity: 1; /* переключение */
 }
 
@@ -127,7 +128,8 @@ body {
 /* slide checked */
 #slide1:checked ~ .slider-track .slide1, /* ~ селектор соседних элементов*/
 #slide2:checked ~ .slider-track .slide2,
-#slide3:checked ~ .slider-track .slide3 {
+#slide3:checked ~ .slider-track .slide3,
+#slide4:checked ~ .slider-track .slide4 {
     display: flex; /* slide view */
     /*opacity: 1;*/
 }
