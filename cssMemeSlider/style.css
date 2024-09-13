@@ -90,7 +90,7 @@ body {
     margin-top: 1%;
     margin-left: auto;
     /*justify-content: right;*/
-    gap: 0.5em;
+    gap: 0.1em;
     justify-content: flex-end;
 }
 .areal-button {
@@ -107,8 +107,8 @@ body {
 .round {
     background-color: yellowgreen;
     border-radius: 50%;
-    width: 0.5rem;
-    height: 0.5rem;
+    width: 0.5em;
+    height: 0.5em;
     
 }
 
