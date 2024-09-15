@@ -1,0 +1,252 @@
+* {
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    width: 100%;
+    margin: 0;
+    background-color: rgb(25, 5, 121);
+}
+.wrapper {
+    position: static;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgb(25, 5, 121);
+    display: flex;
+    flex-direction: column;
+}
+.title {
+    margin-top: 5%;
+    font-size: 3rem;  /*48рх*/
+    color: rgb(242, 158, 171);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3%;
+}
+.dream {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: rgb(227, 83, 39);
+}
+.slider-wrapper {
+    overflow: hidden;
+}
+.slider-track {
+    display: flex;
+    flex-direction: row;
+    /*animation: slideMove 7s infinite;*/
+    transition: transform 0.7s ease-in-out;
+}
+.slide {
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+       
+    transition: opacity 0.7s ease;
+    display: none;
+}
+/*.slide.active {
+    opacity: 1;
+}*/
+#slide1:checked ~ .slider-track .slide1 .img {
+    opacity: 1; /*первая картинка*/
+}
+#slide2:checked ~ .slider-track .slide2 .img,
+#slide3:checked ~ .slider-track .slide3 .img,
+#slide4:checked ~ .slider-track .slide4 .img,
+#slide5:checked ~ .slider-track .slide5 .img {
+    opacity: 1; /* переключение */
+    transition: width 0.7s ease;
+}
+
+.img {
+    height: 30vw; /*высота относительно ширины окна*/
+    background-size: cover;      
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0; 
+    transition: opacity 0.7s ease;
+    animation: fadeIn 0.9s ease forwards;
+}
+.slide-bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.text {
+    padding-top: 1em;
+    color: white;
+    font-size: 1.5em;
+    margin-top: 2em;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    flex-grow: 1;
+    transition: margin-bottom 0.3s ease;
+    animation: fadeIn 0.9s ease forwards;
+}
+.controls {
+    display: flex;
+    margin-right: 0;
+    margin-top: 1%;
+    margin-left: auto;
+    gap: 0.1em;
+    justify-content: flex-end;
+    transition: all 0.7s ease;
+}
+.areal-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.round {
+    background-color: rgb(252, 158, 171);
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    border: 0.5em solid rgb(252, 158, 171);
+    transition: all 0.7s ease;
+}
+
+/*radiobuttons*/
+/*delete real radio button*/
+.real-radio {
+    display: none; 
+}
+
+/* цвет бордера для выбранной кнопки (актив) */
+#slide1:checked ~ .slider-track .controls label[for="slide1"] .round,
+#slide2:checked ~ .slider-track .controls label[for="slide2"] .round,
+#slide3:checked ~ .slider-track .controls label[for="slide3"] .round,
+#slide4:checked ~ .slider-track .controls label[for="slide4"] .round,
+#slide5:checked ~ .slider-track .controls label[for="slide5"] .round {
+    border: 0.5em solid white; 
+    transition: all 0.7s ease;
+}
+
+/* ховеры для активных кнопок */
+#slide1:checked ~ .slider-track .controls label[for="slide1"]:hover .round,
+#slide2:checked ~ .slider-track .controls label[for="slide2"]:hover .round,
+#slide3:checked ~ .slider-track .controls label[for="slide3"]:hover .round,
+#slide4:checked ~ .slider-track .controls label[for="slide4"]:hover .round,
+#slide5:checked ~ .slider-track .controls label[for="slide5"]:hover .round {
+    border: 0.5em solid rgb(227, 83, 39); 
+    transition: all 0.7s ease;
+}
+/* ховеры для неактивных кнопок */
+#slide1 ~ .slider-track .controls label[for="slide1"]:hover .round,
+#slide2 ~ .slider-track .controls label[for="slide2"]:hover .round,
+#slide3 ~ .slider-track .controls label[for="slide3"]:hover .round,
+#slide4 ~ .slider-track .controls label[for="slide4"]:hover .round,
+#slide5 ~ .slider-track .controls label[for="slide5"]:hover .round {
+    border: 0.5em solid white; 
+    background-color: white;
+    transition: all 0.7s ease;
+}
+
+/* slide checked */
+#slide1:checked ~ .slider-track .slide1, /* ~ селектор соседних элементов*/
+#slide2:checked ~ .slider-track .slide2,
+#slide3:checked ~ .slider-track .slide3,
+#slide4:checked ~ .slider-track .slide4,
+#slide5:checked ~ .slider-track .slide5 {
+    display: flex; /* slide view */
+    /*opacity: 1;*/
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/*adaptive*/
+@media(max-width: 53.75rem) {   /*860px*/
+    .text {
+        font-size: clamp(0.5em, 2vw + 0.8em, 1em);
+        transition: font-size 0.7s ease;
+    }
+    .areal-button {
+        padding: clamp(0.1rem, 2vw + 0.3rem, 0.8rem);
+        transition: padding 0.7s ease;       
+    }
+    .round {
+        width: clamp(0.5rem, 2vw + 1rem, 1.5rem);
+        height: clamp(0.5rem, 2vw + 1rem, 1.5rem);
+    }
+}
+
+@media(max-width: 48.125rem) { /*770px*/
+    .slide-bottom {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+}
+
+@media(max-width: 38.4375rem) { /*615px*/
+    .title {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        flex-wrap: wrap;
+        gap: 1%;
+        font-size: clamp(2rem, 2vw + 2rem, 3rem); /*min prefer max*/
+        transition: font-size 0.7s ease;
+        margin-bottom: 2%;
+        margin-left: 0;
+    }
+    .dream {
+        display: block;
+        font-size: 1rem;
+    }
+}
+
+@media(max-width: 31.875rem) { /*510px*/
+    .controls {
+        margin-right: auto;
+        margin-left: auto;
+        justify-content: center;
+        transition: all 0.7s ease;
+    }
+    .areal-button {
+        cursor: default; /*откл. для моб. версии*/
+    }
+    /* ховеры для активных кнопок off*/
+    /*#slide1:checked ~ .slider-track .controls label[for="slide1"]:hover .round,
+    #slide2:checked ~ .slider-track .controls label[for="slide2"]:hover .round,
+    #slide3:checked ~ .slider-track .controls label[for="slide3"]:hover .round,
+    #slide4:checked ~ .slider-track .controls label[for="slide4"]:hover .round,
+    #slide5:checked ~ .slider-track .controls label[for="slide5"]:hover .round {
+        pointer-events: none; 
+    }*/
+    /* ховеры для неактивных кнопок off*/
+    /*#slide1 ~ .slider-track .controls label[for="slide1"]:hover .round,
+    #slide2 ~ .slider-track .controls label[for="slide2"]:hover .round,
+    #slide3 ~ .slider-track .controls label[for="slide3"]:hover .round,
+    #slide4 ~ .slider-track .controls label[for="slide4"]:hover .round,
+    #slide5 ~ .slider-track .controls label[for="slide5"]:hover .round {
+        pointer-events: none; 
+    }*/
+}
+
+
+/*
+@keyframes slideMove {
+    0%   { transform: translateX(0); }
+    33%  { transform: translateX(0); }
+    34%  { transform: translateX(-100%); }
+    67%  { transform: translateX(-100%); }
+    68%  { transform: translateX(-200%); }
+    100% { transform: translateX(-200%); }
+}*/
