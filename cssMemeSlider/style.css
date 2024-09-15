@@ -192,26 +192,6 @@ body {
         flex-direction: column-reverse;
         align-items: flex-start;
     }
-    .areal-button {
-        cursor: default;
-    }
-
-    /* ховеры для активных кнопок off*/
-    #slide1:checked ~ .slider-track .controls label[for="slide1"]:hover .round,
-    #slide2:checked ~ .slider-track .controls label[for="slide2"]:hover .round,
-    #slide3:checked ~ .slider-track .controls label[for="slide3"]:hover .round,
-    #slide4:checked ~ .slider-track .controls label[for="slide4"]:hover .round,
-    #slide5:checked ~ .slider-track .controls label[for="slide5"]:hover .round {
-        pointer-events: none; 
-    }
-    /* ховеры для неактивных кнопок off*/
-    #slide1 ~ .slider-track .controls label[for="slide1"]:hover .round,
-    #slide2 ~ .slider-track .controls label[for="slide2"]:hover .round,
-    #slide3 ~ .slider-track .controls label[for="slide3"]:hover .round,
-    #slide4 ~ .slider-track .controls label[for="slide4"]:hover .round,
-    #slide5 ~ .slider-track .controls label[for="slide5"]:hover .round {
-        pointer-events: none; 
-    }
 }
 
 @media(max-width: 38.4375rem) { /*615px*/
@@ -239,6 +219,25 @@ body {
         justify-content: center;
         transition: all 0.7s ease;
     }
+    .areal-button {
+        cursor: default; /*откл. для моб. версии*/
+    }
+    /* ховеры для активных кнопок off*/
+    /*#slide1:checked ~ .slider-track .controls label[for="slide1"]:hover .round,
+    #slide2:checked ~ .slider-track .controls label[for="slide2"]:hover .round,
+    #slide3:checked ~ .slider-track .controls label[for="slide3"]:hover .round,
+    #slide4:checked ~ .slider-track .controls label[for="slide4"]:hover .round,
+    #slide5:checked ~ .slider-track .controls label[for="slide5"]:hover .round {
+        pointer-events: none; 
+    }*/
+    /* ховеры для неактивных кнопок off*/
+    /*#slide1 ~ .slider-track .controls label[for="slide1"]:hover .round,
+    #slide2 ~ .slider-track .controls label[for="slide2"]:hover .round,
+    #slide3 ~ .slider-track .controls label[for="slide3"]:hover .round,
+    #slide4 ~ .slider-track .controls label[for="slide4"]:hover .round,
+    #slide5 ~ .slider-track .controls label[for="slide5"]:hover .round {
+        pointer-events: none; 
+    }*/
 }
 
 
