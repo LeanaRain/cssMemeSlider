@@ -6,15 +6,12 @@ html {
 }
 body {
     width: 100%;
-    
     margin: 0;
-    /*background-color: rgb(107, 170, 224);*/
     background-color: rgb(25, 5, 121);
 }
 .wrapper {
     position: static;
     width: 80%;
-    /*transition: width 0.7s ease;*/
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -45,7 +42,6 @@ body {
     flex-direction: row;
     /*animation: slideMove 7s infinite;*/
     transition: transform 0.7s ease-in-out;
-   /* transition: transform 0.7s ease;*/
 }
 .slide {
     min-width: 100%;
@@ -107,14 +103,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    /*width: 3rem;
-    height: 3rem;*/
     padding: 1rem;
     cursor: pointer;
     border-radius: 50%;
-    /*background-color: red;*/
-    
-    
 }
 .round {
     background-color: rgb(252, 158, 171);
@@ -124,12 +115,6 @@ body {
     border: 0.5em solid rgb(252, 158, 171);
     transition: all 0.7s ease;
 }
-/*.areal-button:not(:checked):hover .round {
-    border: 0.5em solid white;
-    background-color: white;
-    transition: all 0.7s ease-in-out;
-}*/
-
 
 /*radiobuttons*/
 /*delete real radio button*/
@@ -137,20 +122,6 @@ body {
     display: none; 
 }
 
-.real-radio:checked + .areal-button .round {
-    /*border: 0.4em solid blue;*/
-    
-}
-/*#slide1:checked ~ .slider-track .slide1 .controls label:first-child .round,
-#slide2:checked ~ .slider-track .slide2 .controls label:first-child .round
-#slide3:checked ~ .slider-track .slide3 .controls label:first-child .round
-#slide4:checked ~ .slider-track .slide4 .controls label:first-child .round {
-    border: 0.4em solid red; 
-}*/
-/*#slide1:checked ~ .slider-track .slide1 .controls label:first-child .round
- {
-    border: 0.4em solid red; 
-}*/
 /* цвет бордера для выбранной кнопки (актив) */
 #slide1:checked ~ .slider-track .controls label[for="slide1"] .round,
 #slide2:checked ~ .slider-track .controls label[for="slide2"] .round,
@@ -201,60 +172,56 @@ body {
 }
 
 /*adaptive*/
-@media(max-width: 860px) {
+@media(max-width: 53.75rem) {   /*860px*/
     .text {
         font-size: clamp(0.5em, 2vw + 0.8em, 1em);
         transition: font-size 0.7s ease;
-        /*padding-top: 1em;
-        font-size: 1.5em;
-        margin-top: 2em;
-        flex-grow: 1;
-        transition: margin-bottom 0.3s ease;*/
-        
-    }
-    .controls {
-        /*margin-right: 0;
-        margin-top: 1%;
-        margin-left: auto;
-        gap: 0.1em;
-        justify-content: flex-end;*/
     }
     .areal-button {
         padding: clamp(0.1rem, 2vw + 0.3rem, 0.8rem);
-        /*padding: clamp(0.5rem, 2vw + 0.5rem, 1rem);*/
         transition: padding 0.7s ease;       
     }
     .round {
         width: clamp(0.5rem, 2vw + 1rem, 1.5rem);
         height: clamp(0.5rem, 2vw + 1rem, 1.5rem);
-        /*width: 2rem;
-        height: 2rem;
-        border: 0.5em solid rgb(252, 158, 171);*/
     }
 }
 
-@media(max-width: 770px) {
+@media(max-width: 48.125rem) { /*770px*/
     .slide-bottom {
         flex-direction: column-reverse;
         align-items: flex-start;
     }
-    .controls {
-        /*margin-right: 0;
-        margin-top: 1%;
-        margin-left: auto;
-        gap: 0.1em;
-        justify-content: flex-end;*/
+    .areal-button {
+        cursor: default;
+    }
+
+    /* ховеры для активных кнопок off*/
+    #slide1:checked ~ .slider-track .controls label[for="slide1"]:hover .round,
+    #slide2:checked ~ .slider-track .controls label[for="slide2"]:hover .round,
+    #slide3:checked ~ .slider-track .controls label[for="slide3"]:hover .round,
+    #slide4:checked ~ .slider-track .controls label[for="slide4"]:hover .round,
+    #slide5:checked ~ .slider-track .controls label[for="slide5"]:hover .round {
+        pointer-events: none; 
+    }
+    /* ховеры для неактивных кнопок off*/
+    #slide1 ~ .slider-track .controls label[for="slide1"]:hover .round,
+    #slide2 ~ .slider-track .controls label[for="slide2"]:hover .round,
+    #slide3 ~ .slider-track .controls label[for="slide3"]:hover .round,
+    #slide4 ~ .slider-track .controls label[for="slide4"]:hover .round,
+    #slide5 ~ .slider-track .controls label[for="slide5"]:hover .round {
+        pointer-events: none; 
     }
 }
 
-@media(max-width: 615px) {
+@media(max-width: 38.4375rem) { /*615px*/
     .title {
         display: flex;
         align-items: center;
         justify-content: left;
         flex-wrap: wrap;
         gap: 1%;
-        font-size: clamp(2rem, 2vw + 2rem, 3rem);/*clamp(2rem, 2rem + 1vw, 3rem);*/  /*min prefer max*/
+        font-size: clamp(2rem, 2vw + 2rem, 3rem); /*min prefer max*/
         transition: font-size 0.7s ease;
         margin-bottom: 2%;
         margin-left: 0;
@@ -265,7 +232,7 @@ body {
     }
 }
 
-@media(max-width: 510px) {
+@media(max-width: 31.875rem) { /*510px*/
     .controls {
         margin-right: auto;
         margin-left: auto;
@@ -275,7 +242,7 @@ body {
 }
 
 
-
+/*
 @keyframes slideMove {
     0%   { transform: translateX(0); }
     33%  { transform: translateX(0); }
@@ -283,4 +250,4 @@ body {
     67%  { transform: translateX(-100%); }
     68%  { transform: translateX(-200%); }
     100% { transform: translateX(-200%); }
-}
+}*/
